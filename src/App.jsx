@@ -73,7 +73,7 @@ const App = () => {
           {task.map((elem, idx) => (
             <div
               key={idx}
-              className="relative flex flex-col justify-between min-h-52 w-40 rounded-xl pt-9 pb-4 px-4 text-black bg-cover"
+              className="flex flex-col justify-between min-h-52 w-40 rounded-xl pt-9 pb-4 px-4 text-black bg-cover bg-center bg-gray-300 bg-blend-multiply"
               style={{
                 backgroundImage:
                   "url('https://static.vecteezy.com/system/resources/previews/037/152/677/non_2x/sticky-note-paper-background-free-png.png')"
@@ -83,7 +83,7 @@ const App = () => {
               {/* <div className="absolute inset-0 bg-gray-300/80 rounded-xl"></div> */}
 
               {/* content */}
-              <div className="relative z-10">
+              <div>
                 <h3 className="text-lg font-bold break-words">{elem.title}</h3>
                 <p className="mt-2 text-xs font-semibold text-gray-800 break-words whitespace-pre-wrap">
                   {elem.details}
