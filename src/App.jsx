@@ -80,7 +80,7 @@ const App = () => {
               }}
             >
               {/* gray overlay */}
-              <div className="absolute inset-0 bg-gray-300/80 rounded-xl"></div>
+              {/* <div className="absolute inset-0 bg-gray-300/80 rounded-xl"></div> */}
 
               {/* content */}
               <div className="relative z-10">
