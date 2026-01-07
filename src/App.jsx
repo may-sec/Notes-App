@@ -39,7 +39,7 @@ const App = () => {
   }
 
   return (
-    <div className='h-screen lg:flex bg-black text-white'>
+    <div className='min-h-screen lg:flex bg-black text-white'>
 
       <form onSubmit={submitHandler} className='flex gap-4 lg:w-1/2 p-10 flex-col items-start'>
 
@@ -73,22 +73,26 @@ const App = () => {
           {task.map((elem, idx) => (
             <div
               key={idx}
-              className="flex flex-col justify-between relative min-h-52 w-40 bg-cover rounded-xl text-black pt-9 pb-4 px-4"
+              className="relative flex flex-col justify-between min-h-52 w-40 rounded-xl pt-9 pb-4 px-4 text-black bg-cover"
               style={{
                 backgroundImage:
                   "url('https://static.vecteezy.com/system/resources/previews/037/152/677/non_2x/sticky-note-paper-background-free-png.png')"
               }}
             >
-              <div>
-                <h3 className='text-lg font-bold break-words'>{elem.title}</h3>
-                <p className='mt-2 text-xs font-semibold text-gray-600 break-words whitespace-pre-wrap'>
+              {/* gray overlay */}
+              <div className="absolute inset-0 bg-gray-300/80 rounded-xl"></div>
+
+              {/* content */}
+              <div className="relative z-10">
+                <h3 className="text-lg font-bold break-words">{elem.title}</h3>
+                <p className="mt-2 text-xs font-semibold text-gray-800 break-words whitespace-pre-wrap">
                   {elem.details}
                 </p>
               </div>
-
+            
               <button
                 onClick={() => deleteNote(idx)}
-                className='w-full active:scale-95 bg-red-500 py-1 text-xs rounded font-bold text-white hover:bg-red-300'
+                className="relative z-10 w-full bg-red-500 py-1 text-xs rounded font-bold text-white hover:bg-red-400"
               >
                 Delete
               </button>
