@@ -73,15 +73,15 @@ const App = () => {
           {task.map((elem, idx) => (
             <div
               key={idx}
-              className="flex flex-col justify-between h-52 w-40 rounded-xl pt-9 pb-4 px-4 text-black bg-cover"
+              className="flex flex-col justify-between relative min-h-52 w-40 bg-cover rounded-xl text-black pt-9 pb-4 px-4"
               style={{
                 backgroundImage:
                   "url('https://static.vecteezy.com/system/resources/previews/037/152/677/non_2x/sticky-note-paper-background-free-png.png')"
               }}
             >
               <div>
-                <h3 className='text-lg font-bold'>{elem.title}</h3>
-                <p className='mt-2 text-xs font-semibold text-gray-600'>
+                <h3 className='text-lg font-bold break-words'>{elem.title}</h3>
+                <p className='mt-2 text-xs font-semibold text-gray-600 break-words whitespace-pre-wrap'>
                   {elem.details}
                 </p>
               </div>
